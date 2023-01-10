@@ -1,0 +1,12 @@
+<p>Book was successfully created.</p>
+<h2>タイトル</h2>
+<p><%= @book.title %></p>
+
+
+<h2>本文</h2>
+<p><%= @book.body %></p>
+<div>
+<%= link_to "edit", edit_book_path(@book.id) %>
+|
+<%= link_to "back", "https://69c0932662bf4caba8e03be4b2aaa746.vfs.cloud9.ap-northeast-1.amazonaws.com/books" %>
+</div>
