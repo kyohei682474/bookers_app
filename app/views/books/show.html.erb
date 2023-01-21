@@ -10,3 +10,6 @@
 |
 <%= link_to "back", "https://69c0932662bf4caba8e03be4b2aaa746.vfs.cloud9.ap-northeast-1.amazonaws.com/books" %>
 </div>
+<%= link_to "show", update_book_path(@book.id) %>
+
+<%= link_to "delete", destroy_book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>

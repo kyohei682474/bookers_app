@@ -1,14 +1,44 @@
 <h2>New book</h2>
 
-
+<span>
+   <div>Title</div>
 <% @books.each do |book| %>
-
-
-   <p>タイトル</p>
-   <span><%= link_to book.title, book_path(book.id) %></span>
-
-
+<div><%= link_to book.title, book_path(book.id) %></div>
 <% end %>
+</span>
+<span>
+   <div>Body</div>
+<% @books.each do |book| %>
+<div><%= link_to book.body, book_path(book.id) %></div>
+<% end %>
+</span>
+
+
+
+<table border>
+  <thead>
+   <tr>
+     <th>Title</th>
+     <th>Body</th>
+     <th colspan="3"></th>
+   </tr>
+  </thead>
+
+  <tbody>
+  <tr>
+    <% @books.each do |book| %>
+    <th><div><%= link_to book.title, book_path(book.id) %><div></th>
+    <th><div><%= link_to book.body, book_path(book.id) %><div></th>
+    <th><%= link_to "edit", edit_book_path(book.id) %></th>
+    <th><%= link_to "delete", destroy_book_path(book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></th>
+　　<th></th><%= link_to "show", update_book_path(book.id) %></th>
+    <% end %>
+  <tr>
+  </tbody>
+    <td></td>
+  </tr>
+
+</table>
 
 
 <%= form_with model: @book, url: '/books', method: :post do |f| %>
