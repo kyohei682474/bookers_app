@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html>
+
 <div><%= flash[:success] %></div>
 <h2>Books</h2>
-<body style>
- <table>
+
+ <table >
   <thead>
     <tr>
      <th>Title</th>
@@ -15,11 +14,11 @@
   <tbody>
    <% @books.each do |book| %>
   　 <tr>
-      <th><div><%= link_to book.title %></div></th>
-      <th><div><%= link_to book.body %></div></th>
-      <th><%= link_to "show", update_book_path(book.id) %></th>
-      <th><%= link_to "edit", edit_book_path(book.id) %></th>
-      <th><%= link_to "destroy", destroy_book_path(book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></th>
+      <th><div><%= book.title %></div></th>
+      <th><div><%=  book.body %></div></th>
+      <th><%= link_to "Show", book_path(book.id) %></th>
+      <th><%= link_to "Edit", edit_book_path(book.id) %></th>
+      <th><%= link_to "Destroy",book_path(book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></th>
 
    　</tr>
    <% end %>
@@ -28,7 +27,7 @@
   </tr>
 
  </table>
-</body>
+
 
 <h2>New book<h2>
  
@@ -46,7 +45,7 @@
 
 
 
-<form>
+
  <div class="field">
    <label for="book_title">Title</label>
 
@@ -62,6 +61,4 @@
   <%= f.submit 'Create Book' %>
  </div>
  <% end %>
-</form>
-</body>
-</html>
+

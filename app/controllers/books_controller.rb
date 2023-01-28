@@ -39,6 +39,7 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
   end
 
+
   def update
     @book = Book.find(params[:id])
     book = Book.find(params[:id])
@@ -48,13 +49,15 @@ class BooksController < ApplicationController
     if @book.save
       flash[:update] = "Book was successfully update."
       redirect_to book_path(@book.id)
+ 
+      
     else
       render :edit
     end 
-    
+  end
     
   
-  end
+
 
 private
   def book_params
@@ -64,3 +67,4 @@ private
 
   end
 end
+

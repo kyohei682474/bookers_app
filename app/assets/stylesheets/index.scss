@@ -16,9 +16,9 @@ h2{
 
 body{
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-  margin: 33px;
+  font-size: 20px;
+  line-height: 20px;
+  margin: 10px;
   display: block;
 }
 
@@ -28,7 +28,8 @@ table{
   box-sizing: border-box;
   text-indent: initial;
   border-spacing: 2px;
-  border-color: grey;
+  font-size: 15px;
+  width: 350px;
 }
 .field{
   margin-bottom: 10px;
