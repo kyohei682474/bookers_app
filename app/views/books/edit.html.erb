@@ -20,11 +20,11 @@
   <h4>Body</h4>
   <%= f.text_area :body %>
 
-  <p><%= f.submit 'update book' %></p>
+  <p><%= f.submit 'Update Book' %></p>
   
 
 
 <% end %>
 
 <div><%= link_to "Show", book_path(@book.id) %></div>
-<div><%= link_to "Edit", edit_book_path(@book.id) %></div>
+<div><%= link_to "Back", books_path %></div>
